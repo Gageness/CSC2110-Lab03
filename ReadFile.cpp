@@ -3,6 +3,7 @@
 #include <string>
 
 using CSC2110::String;
+//using the given namespace
 
 ReadFile::ReadFile(const char* file_name)
 {

@@ -2,6 +2,7 @@
 #include <sstream>
 
 using CSC2110::String;
+//using the given namespace
 
 WriteFile::WriteFile(const char* file_name)
 {
