@@ -1,7 +1,7 @@
 #if !defined PASSWORD_H
 #define PASSWORD_H
 
-//complete the includes
+#include "Text.h"
 
 class Password
 {
