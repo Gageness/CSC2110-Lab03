@@ -1,8 +1,9 @@
 #include "Password.h"
-using CSC2110::ListArrayIterator;
 
 #include <iostream>
 using namespace std;
+using CSC2110::Password;
+using CSC2110::ListArrayIterator;
 
 Password::Password() {
 
@@ -19,13 +20,13 @@ Password::~Password() {
 
 	while (all_words_it -> hasNext()) {
 		
-		String* words_all = iterator -> next();
+		String* words_all = all_words_it -> next();
 		delete words_all;
 		
 	}
 	while (viable_words_it -> hasNext()) {
 	
-		String* words_viable = iterator -> next();
+		String* words_viable = viable_words_it -> next();
 		delete words_viable;
 	
 	}
@@ -67,7 +68,7 @@ void Password::displayViableWords() {
 	
 	while (words -> hasNext()) {
 	
-		String* viable = iterator -> next;
+		String* viable = words -> next();
 		viable -> displayString();
 		cout << endl;
 	
