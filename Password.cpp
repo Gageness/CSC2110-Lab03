@@ -8,6 +8,7 @@ Password::Password() {
 
 	all_words = new ListArray<String>();
 	viable_words = new ListArray<String>();
+	len = 0;
 
 }
 
@@ -29,9 +30,36 @@ Password::~Password() {
 	
 	}
 }
-void Password::addWord(String* word)
-void Password::guess(int try_password, int num_matches)
-int Password::getNumberOfPasswordsLeft()
+
+void Password::addWord(String* word) {
+
+	if (len == 0) {
+	
+		len = word -> length();
+		
+		all_words -> add(word);
+		viable_words -> add(word);
+	
+	}
+	else if (len == word -> length()) {
+	
+		all_words -> add(word);
+		viable_words -> add(word);
+	
+	}
+}
+
+void Password::guess(int try_password, int num_matches) {
+
+
+
+}
+
+int Password::getNumberOfPasswordsLeft() {
+
+	return viable_words -> size();
+	
+}
 
 void Password::displayViableWords() {
 
@@ -46,9 +74,20 @@ void Password::displayViableWords() {
 	}
 
 }
-int Password::bestGuess()
-String* Password::getOriginalWord(int index)
 
+String* Password::getOriginalWord(int index) {
+
+	String* original_word = all_words -> get(index);
+	
+	return original_word;
+
+}
+
+int getNumMatches(String* curr_word, String* word_guess) {
+
+
+
+}
 
 int Password::bestGuess()
 {
