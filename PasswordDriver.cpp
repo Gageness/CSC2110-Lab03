@@ -1,8 +1,13 @@
 #include "Password.h"
-//fill in includes, don't forget namespaces
+#include "Keyboard.h"
+#include "Readfile.h"
 
 #include <iostream>
 using namespace std;
+using CSC2110::Password;
+using CSC2110::Keyboard;
+using CSC2110::Readfile;
+
 
 void addWords(Password* fh)
 {
