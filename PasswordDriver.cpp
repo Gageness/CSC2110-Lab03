@@ -6,8 +6,6 @@
 using namespace std;
 using CSC2110::Password;
 using CSC2110::Keyboard;
-using CSC2110::Readfile;
-
 
 void addWords(Password* fh)
 {
