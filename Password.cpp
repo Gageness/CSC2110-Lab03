@@ -15,21 +15,9 @@ Password::Password() {
 
 Password::~Password() {
 
-	ListArrayIterator<String>* all_words_it = all_words -> iterator();
-	ListArrayIterator<String>* viable_words_it = viable_words -> iterator();
-
-	while (all_words_it -> hasNext()) {
-		
-		String* words_all = all_words_it -> next();
-		delete words_all;
-		
-	}
-	while (viable_words_it -> hasNext()) {
+	delete all_words;
+	delete viable_words;
 	
-		String* words_viable = viable_words_it -> next();
-		delete words_viable;
-	
-	}
 }
 
 void Password::addWord(String* word) {
@@ -62,7 +50,7 @@ void Password::guess(int try_password, int num_matches) {
 		
 		int matches = getNumMatches(word, user_guess);
 		
-		if (num_matches = matches) {
+		if (num_matches == matches) {
 		
 			temp -> add(word);
 		
