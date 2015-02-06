@@ -52,8 +52,25 @@ void Password::addWord(String* word) {
 
 void Password::guess(int try_password, int num_matches) {
 
-
-
+	ListArray<String>* temp = new ListArray<String>();
+	ListArrayIterator<String>* list = viable_words -> iterator();
+	
+	while (list -> hasNext()) {
+		
+		String* word = list -> next();
+		String* user_guess = all_words -> get(try_password);
+		
+		int matches = getNumMatches(word, user_guess);
+		
+		if (num_matches = matches) {
+		
+			temp -> add(word);
+		
+		}
+	}
+	
+	viable_words = temp;
+	
 }
 
 int Password::getNumberOfPasswordsLeft() {
@@ -84,10 +101,21 @@ String* Password::getOriginalWord(int index) {
 
 }
 
-int getNumMatches(String* curr_word, String* word_guess) {
+int Password::getNumMatches(String* curr_word, String* word_guess) {
 
-
-
+	int num_matches = 0;
+	
+	for (int i = 0; i < len; i++) {
+	
+		if (curr_word -> charAt(i) == word_guess -> charAt(i)) {
+		
+			num_matches += 1;
+		
+		}
+		
+	}
+	
+	return num_matches;
 }
 
 int Password::bestGuess()
